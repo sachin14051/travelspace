@@ -1,11 +1,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+       
+        <div class="col-md-10">
             <button class="btn btn-primary" [routerLink]="['/add']">add data</button>
-         
-        </div>
-        <div class="col-md-8">
             <table class="table table-bordered">
                 <thead>
 
@@ -29,7 +27,8 @@
                         <td>{{s.name}}</td>
                         <td>{{s.city}}</td>
                         <td>{{s.details}}</td>
-                        <td>{{s.image}}</td>
+                        <td>
+                        <img src="{{s.image}}" alt="img" title="img" class="img-fluid"></td>
                         <td>
                             <i class="fas fa-edit text-success" [routerLink]="['/add',s.id,'edit']"></i>
                         </td>

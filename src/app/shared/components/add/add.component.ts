@@ -18,7 +18,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.adddata();
-    this.id = this.acti.snapshot.params['id']
+   
     
   }
 
@@ -50,7 +50,7 @@ export class AddComponent implements OnInit {
   }
 
   onUpdate(){
-    let updated
+
   }
 
 }

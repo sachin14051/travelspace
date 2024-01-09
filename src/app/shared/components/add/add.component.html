@@ -23,7 +23,9 @@
             <input type="text" class="form-control" formControlName="image">
         </div>
         <div class="text-right">
-            <button class="btn btn-primary">add</button>
+            <button class="btn btn-primary" type="submit" *ngIf="!id">add</button>
+            <button class="btn btn-primary" type="button" *ngIf="id" (click)="onUpdate()">update</button>
+
         </div>
     </form>
 </div>

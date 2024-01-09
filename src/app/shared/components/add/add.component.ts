@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { DatabaseService } from '../../service/database.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Iobj } from '../../model/model';
 
 @Component({
@@ -11,12 +11,15 @@ import { Iobj } from '../../model/model';
 })
 export class AddComponent implements OnInit {
   addForm!:FormGroup;
- 
+ id =null
   constructor( private _database:DatabaseService,
-              private _router : Router) { }
+              private _router : Router,
+               private acti :ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.adddata()
+    this.adddata();
+    this.id = this.acti.snapshot.params['id']
+    
   }
 
   adddata(){
@@ -41,8 +44,13 @@ export class AddComponent implements OnInit {
       image :this.addForm.value.image
     };
     this.addForm.reset()
-  
+  this._database.getPostData(obj).subscribe(res=>console.log(res)
+  )
     this._router.navigate(['home'])
+  }
+
+  onUpdate(){
+    
   }
 
 }

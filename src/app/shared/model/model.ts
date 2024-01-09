@@ -4,4 +4,5 @@ export interface  Iobj {
     city : string,
     details : string,
     image : string,
+    id?:string
 }

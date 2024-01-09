@@ -8,6 +8,8 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"home", component:HomeComponent},
   {path:"add", component:AddComponent},
+  {path:"add/:id/edit", component:AddComponent},
+
   {path:"pagenotfound", component:PagenotfoundComponent},
   {path:"**", redirectTo:"pagenotfound"},
 

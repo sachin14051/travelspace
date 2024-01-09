@@ -16,17 +16,25 @@
                         <th>city</th>
                         <th>details</th>
                         <th>image</th>
+                        <th>edit </th>
+                        <th>delete</th>
+
                         
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let s of allData;  let i as index">
+                    <tr *ngFor="let s of allData; let i= index">
                         <td>{{i+1}}</td>
                         <td>{{s.state}}</td>
                         <td>{{s.name}}</td>
                         <td>{{s.city}}</td>
                         <td>{{s.details}}</td>
                         <td>{{s.image}}</td>
+                        <td>
+                            <i class="fas fa-edit text-success" [routerLink]="['/add',s.id,'edit']"></i>
+                        </td>
+                        <td><i class="fas fa-trash text-danger"></i></td>
+
 
                     </tr>
                 </tbody>

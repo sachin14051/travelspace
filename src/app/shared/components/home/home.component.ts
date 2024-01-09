@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../service/database.service';
+import { Iobj } from '../../model/model';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +8,18 @@ import { DatabaseService } from '../../service/database.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  allData =JSON.parse(localStorage.getItem("dataArray")!)
-  constructor() { }
+  allData :Array<Iobj> = []
+  constructor(private _database:DatabaseService) { }
 
   ngOnInit(): void {
-    console.log(this.allData);
-
     
+    this._database.getAlldata().subscribe(res=>this.allData=res)
+    console.log(this.allData);
+   
    
     
   }
+
+
 
 }

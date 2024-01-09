@@ -1,0 +1,29 @@
+<div class="container">
+    <form  [formGroup]="addForm" (ngSubmit)="onAddDaata()">
+        
+        <div class="form-group">
+            <label for="state">state</label>
+            <input type="text" class="form-control" formControlName="state">
+        </div>
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="city">city</label>
+            <input type="text" class="form-control" formControlName="city">
+        </div>
+        
+        <div class="form-group">
+            <label for="details">details</label>
+            <input type="text" class="form-control" formControlName="details">
+        </div>
+        <div class="form-group">
+            <label for="image">image</label>
+            <input type="text" class="form-control" formControlName="image">
+        </div>
+        <div class="text-right">
+            <button class="btn btn-primary">add</button>
+        </div>
+    </form>
+</div>

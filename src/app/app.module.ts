@@ -9,19 +9,22 @@ import { PagenotfoundComponent } from './shared/components/pagenotfound/pagenotf
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AkkiPipe } from './shared/pipe/akki.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddComponent,
     PagenotfoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    AkkiPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
